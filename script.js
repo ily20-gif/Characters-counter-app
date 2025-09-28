@@ -42,7 +42,7 @@ btnToggle.addEventListener('click',()=>{
 
 
 function countWords(val) {
-    const words = val.split(/\s+|\n+/);
+    let words = val.split(/\s+|\n+/);
     if (words[words.length - 1] === "") {
         words.pop()
     }
@@ -50,7 +50,7 @@ function countWords(val) {
 }
 
 function countPhrases(val) {
-    const phrases = val.split(/\.\s/);
+    let phrases = val.split(/\.\s+/)
     if (phrases[phrases.length - 1] === "") {
         phrases.pop()
     }
