@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -76,11 +77,30 @@ header{
         gap: 20px;
     }
     #limit-inp{
-        width: 80px;
         display: none;
+        width: 80px;
         border-radius: 3px;
-        margin-right: 5px;
+        margin-left:10px;
+        padding: 5px;
     }
+}
+.options {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    background: inherit;
+    position: static !important;
+    z-index: 2;
+    margin: 90px 0 10px 0 !important;
+    padding: 0 !important;
+}
+.inps {
+    flex-direction: column !important;
+    gap: 10px !important;
+}
+.options label, .options input {
+    font-size: 1rem !important;
 }
 .result-aria{
     display: flex;
