@@ -10,45 +10,50 @@
     <div class="container">
         <header>
             <div class="logo">
-                <h4>Character Counter</h4>
+                <img class="logo-img" src="imgs/logo-dark-theme.svg" class="logo">
             </div>
             <div class="toggle-btn">
-                <button type="button" class="btn">To Light</button>
+                <div class="btn"><img class="mode-img" src="imgs/icon-sun.svg" alt=""></div>
             </div>
         </header>
         <div class="title">
             <h1>Analyse your text <br> in real-time</h1>
         </div>
-        <div class="text-aria">
-            <textarea placeholder="Start typing here....(or paste your text)"></textarea>
+        <div class="textZone">
+             <div class="text-aria">
+                <textarea placeholder="Start typing here....(or paste your text)"></textarea>
+            </div>
+            <div class="error"></div>
+            <div class="options">
+                    <div class="inps">
+                        <div>
+                            <input type="checkbox" id="spaces">
+                            <label>Exclude Spaces</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="limit">
+                            <label>Set Character Limit</label>
+                            <input type="number" id="limit-inp" min="1"placeholder="Limit" />
+                        </div>
+                    </div>
+                    <p class="reading-time">Approx. reading time:<span></span></p>
+            </div> 
         </div>
-        <div class="error"></div>
-        <div class="options">
-                <div class="inps">
-                    <div>
-                        <input type="checkbox" id="spaces">
-                        <label>Exclude Spaces</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="limit">
-                        <label>Set Character Limit</label>
-                        <input type="number" id="limit-inp" min="1"placeholder="Limit" />
-                    </div>
-                </div>
-                <p>Approx,reading time; 1 minutes </p>
-        </div> 
         <div class="result-aria">
             <div class="res total-ch">
                 <h1 class="total-ch-nb">0</h1>
                 <p>Total Characters</p>
+                <object data="icons/pattern-character-count.svg" type="image/svg+xml"></object>
             </div>
             <div class="res word">
                 <h1 class="word-nb">0</h1>
                 <p>Word Count</p>
+                <object data="icons/pattern-word-count.svg" type="image/svg+xml"></object>
             </div>
             <div class="res sentence">
                 <h1 class="sentc-nb">0</h1>
                 <p>Sentence Count</p>
+                <object data="icons/pattern-sentence-count.svg" type="image/svg+xml"></object>
             </div>
         </div>
         <div class="letter-density-main">

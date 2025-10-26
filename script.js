@@ -28,17 +28,34 @@ limitInput.addEventListener('input', () => {
 })
 
 
+
+
+
+
+
 //dark/light mode toggle
 let btnToggle = document.querySelector('.btn')
 btnToggle.addEventListener('click',()=>{
     if(document.body.classList.contains('light')){
         document.body.classList.remove('light')
-        btnToggle.textContent = 'To Light'
+        document.querySelector('.logo-img').src = 'imgs/logo-dark-theme.svg'
+        document.querySelector('.mode-img').src = 'imgs/icon-sun.svg'
     }else{
         document.body.classList.add('light')
-        btnToggle.textContent = 'To Dark'
+        document.querySelector('.logo-img').src = 'imgs/logo-light-theme.svg'
+        document.querySelector('.mode-img').src = 'imgs/icon-moon.svg'
     }
 })
+
+
+
+
+
+
+
+
+
+
 
 
 function countWords(val) {
@@ -164,6 +181,22 @@ function updateLetterDensityDisplay(charsObj) {
     }
 }
 
+function readingTime(wordscount) {
+    let timeSpan = document.querySelector(".reading-time span");
+    if (!wordscount || wordscount === 0) {
+        timeSpan.textContent = ""
+        return
+    }
+    let totalSeconds = Math.ceil((wordscount / 200) * 60)
+    let minutes = Math.floor(totalSeconds / 60)
+    let seconds = totalSeconds % 60
+    if (seconds === 0) {
+        timeSpan.textContent = `   ${minutes} min ${minutes > 1 ? 's' : ''}`
+    } else {
+        timeSpan.textContent = `  ${minutes} min ${seconds} sec`
+    }
+}
+
 textArea.addEventListener('input', () => {
     let valueText = textArea.value
     if (!valueText) {
@@ -172,6 +205,8 @@ textArea.addEventListener('input', () => {
         divERR.textContent = "Veuillez d'abord saisir du texte"
         displayCounts(0, 0, 0)
         document.querySelector('.letter-density').innerHTML = ''
+        let timeSpan = document.querySelector('.reading-time span')
+        if (timeSpan) timeSpan.textContent = ''
     } else {
         let divERR = document.querySelector('.error')
         divERR.style.display = 'none'
@@ -187,6 +222,7 @@ textArea.addEventListener('input', () => {
         let charsObj = chars(valueText)
         displayCounts(nbChars, nbWords, nbPhrases)
         updateLetterDensityDisplay(charsObj)
+        readingTime(nbWords)
     }
 })
 
