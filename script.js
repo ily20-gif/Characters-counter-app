@@ -36,12 +36,12 @@ let btnToggle = document.querySelector('.btn')
 btnToggle.addEventListener('click',()=>{
     if(document.body.classList.contains('light')){
         document.body.classList.remove('light')
-        document.querySelector('.logo-img').src = 'logo-dark-theme.svg'
-        document.querySelector('.mode-img').src = 'icon-sun.svg'
+        document.querySelector('.logo-img').src = './logo-dark-theme.svg'
+        document.querySelector('.mode-img').src = './icon-sun.svg'
     }else{
         document.body.classList.add('light')
-        document.querySelector('.logo-img').src = 'logo-light-theme.svg'
-        document.querySelector('.mode-img').src = 'icon-moon.svg'
+        document.querySelector('.logo-img').src = './logo-light-theme.svg'
+        document.querySelector('.mode-img').src = './icon-moon.svg'
     }
 })
 
