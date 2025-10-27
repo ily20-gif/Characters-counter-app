@@ -75,7 +75,7 @@ header button {
 
 .text-aria {
   width: 100%;
-  height: 220px;
+  height: 200px;
   position: relative;
 }
 
@@ -94,20 +94,19 @@ header button {
 .options {
   display: flex;
   justify-content: space-between;
-  margin-right: 20px;
   width: 100%;
+  padding-right: 20px;
   flex-direction: row;
   background: inherit;
   position: static;
   z-index: 2;
-  padding: 0;
-  margin-top: 0;
 }
 
 .options .inps {
   display: flex;
   flex-direction: row;
   gap: 20px;
+  margin-left: 40px ;
 }
 
 #limit-inp {
@@ -357,5 +356,4 @@ header button {
     font-size: 0.9rem;
   }
 }
-
 
