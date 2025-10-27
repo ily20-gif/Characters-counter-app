@@ -217,11 +217,10 @@ header button {
     padding: 10px;
     border-radius: 20px;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
+    width: 30%;
     font-size: 16px;
     padding: 10px 0;
+    right: 0;
 }
 
 /* ---- MESSAGE D’ERREUR ---- */
@@ -356,4 +355,5 @@ header button {
     font-size: 0.9rem;
   }
 }
+
 
