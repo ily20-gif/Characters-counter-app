@@ -1,12 +1,12 @@
 let spacesCheckbox = document.querySelector('#spaces')
-//if the exclude spaces checkbox changes, throw input event to update counts
+
 spacesCheckbox.addEventListener('change', () => {
     textArea.dispatchEvent(new Event('input'))
 })
 let limitCheckbox = document.querySelector('#limit')
 let limitInput = document.querySelector('#limit-inp')
 
-// Show/hide limit input and set maxlength
+
 limitCheckbox.addEventListener('change', () => {
     if (limitCheckbox.checked) {
         limitInput.style.display = 'inline'
@@ -18,7 +18,8 @@ limitCheckbox.addEventListener('change', () => {
         textArea.removeAttribute('maxlength')
     }
 })
-//toggle the maxlength attr when the limit input changes
+
+
 limitInput.addEventListener('input', () => {
     if (limitInput.value && limitCheckbox.checked) {
         textArea.setAttribute('maxlength', limitInput.value);
@@ -31,19 +32,16 @@ limitInput.addEventListener('input', () => {
 
 
 
-
-
-//dark/light mode toggle
 let btnToggle = document.querySelector('.btn')
 btnToggle.addEventListener('click',()=>{
     if(document.body.classList.contains('light')){
         document.body.classList.remove('light')
-        document.querySelector('.logo-img').src = 'imgs/logo-dark-theme.svg'
-        document.querySelector('.mode-img').src = 'imgs/icon-sun.svg'
+        document.querySelector('.logo-img').src = 'logo-dark-theme.svg'
+        document.querySelector('.mode-img').src = 'icon-sun.svg'
     }else{
         document.body.classList.add('light')
-        document.querySelector('.logo-img').src = 'imgs/logo-light-theme.svg'
-        document.querySelector('.mode-img').src = 'imgs/icon-moon.svg'
+        document.querySelector('.logo-img').src = 'logo-light-theme.svg'
+        document.querySelector('.mode-img').src = 'icon-moon.svg'
     }
 })
 
