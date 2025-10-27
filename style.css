@@ -298,6 +298,8 @@ header button {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    margin:0;
+    padding:0;
   }
 
   .options .inps {
@@ -355,4 +357,5 @@ header button {
     font-size: 0.9rem;
   }
 }
+
 
