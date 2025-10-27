@@ -221,6 +221,7 @@ header button {
     font-size: 16px;
     padding: 10px 0;
     right: 0;
+    display: none;
 }
 
 /* ---- MESSAGE D’ERREUR ---- */
@@ -298,8 +299,6 @@ header button {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    margin:0;
-    padding:0;
   }
 
   .options .inps {
@@ -357,5 +356,4 @@ header button {
     font-size: 0.9rem;
   }
 }
-
 

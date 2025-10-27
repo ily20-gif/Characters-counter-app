@@ -210,6 +210,11 @@ textArea.addEventListener('input', () => {
         displayCounts(nbChars, nbWords, nbPhrases)
         updateLetterDensityDisplay(charsObj)
         readingTime(nbWords)
+        if(charsObj.length>5){
+            btnSeeMore.style.display='inline'
+        }else{
+            btnSeeMore.style.display='none'
+        }
     }
 })
 
