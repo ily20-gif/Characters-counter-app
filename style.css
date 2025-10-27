@@ -82,7 +82,7 @@ header button {
 .text-aria textarea {
   position: absolute;
   width: 95%;
-  height: 70%;
+  height: 90%;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 15px;
@@ -357,4 +357,5 @@ header button {
     font-size: 0.9rem;
   }
 }
+
 
