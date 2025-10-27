@@ -65,43 +65,32 @@ function countWords(val) {
 }
 
 function countPhrases(val) {
-    let phrases = val.split(/\.\s+/)
-    if (phrases[phrases.length - 1] === "") {
-        phrases.pop()
-    }
+    let phrases = val.split(/[.!?]+/)
+    phrases = phrases.filter(p => p.trim() !== "")
     return phrases.length
 }
 
-function chars(val){
-    let arrayChars=[]
+
+function chars(val) {
     let charsObj = {}
-    let total=0
-    let valLower=val.toLowerCase()
-    if (valLower.length!=0){ 
-        for (let ch of valLower){
-            let reg = /[A-Z]/ig
-            if (reg.test(ch)){
-                if (charsObj[ch]){
-                    charsObj[ch]++
-                    total++
-                }else{
-                    charsObj[ch] = 1
-                    total++
-                }
-            }   
+    let total = 0
+    let valLower = val.toLowerCase()
+
+    for (let ch of valLower) {
+        if (/[a-z]/i.test(ch)) {
+            charsObj[ch] = (charsObj[ch] || 0) + 1
+            total++;
         }
     }
-    for(let ch in charsObj){
-        let perc=((charsObj[ch]/total)*100).toFixed(2)
-        arrayChars.push({
-            letter : ch,
-            count : charsObj[ch],
-            total : total,
-            percentage : perc
-        })
-    }
-    return arrayChars
+
+    return Object.entries(charsObj).map(([letter, count]) => ({
+        letter,
+        count,
+        total,
+        percentage: ((count / total) * 100).toFixed(2)
+    }))
 }
+
 
 
 function displayCounts(ch,wrd,sentc){
@@ -200,7 +189,7 @@ textArea.addEventListener('input', () => {
     if (!valueText) {
         let divERR = document.querySelector('.error')
         divERR.style.display = 'block'
-        divERR.textContent = "Veuillez d'abord saisir du texte"
+        divERR.textContent = "Le champ est vide."
         displayCounts(0, 0, 0)
         document.querySelector('.letter-density').innerHTML = ''
         let timeSpan = document.querySelector('.reading-time span')
